@@ -32,7 +32,7 @@ class TodoController extends Controller
     {
         $todo = Todo::find($id);
         if (!$todo) {
-            return response()->json(["message", "Todo not found"], 404);
+            return response()->json(['message' => 'Data not found.'], 404);
         }
         return response()->json($todo, 200);
     }

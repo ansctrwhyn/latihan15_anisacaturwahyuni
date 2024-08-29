@@ -33,3 +33,11 @@ $router->get('/todo/{id}', 'TodoController@show');
 $router->post('/todo', 'TodoController@store');
 $router->put('/todo/{id}', 'TodoController@update');
 $router->delete('/todo/{id}', 'TodoController@destroy');
+
+$router->options('{any:*}', function () {
+    return response('', 200);
+});
+
+// $router->options('{any:*}', function () {
+//     return response('', 200)->headers('Access-Control-Allow-Method', 'GET');
+// });
